@@ -16,11 +16,8 @@
         module.exports = factory(moment);
     } else if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(function (req)
+        define(["moment"],function (moment)
         {
-            // Load moment.js as an optional dependency
-            var id = 'moment';
-            try { moment = req(id); } catch (e) {}
             return factory(moment);
         });
     } else {
